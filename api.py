@@ -22,7 +22,7 @@ from insightface.data import get_image as ins_get_image
 app = FaceAnalysis(allowed_modules=['detection']) # enable detection model only
 app.prepare(ctx_id=0, det_size=(640, 640))
 
-async def face_pose(input_image: str):
+async def insightface_face_num(input_image: str):
     try:
         # app = FaceAnalysis(allowed_modules=['detection']) # enable detection model only
         # app.prepare(ctx_id=0, det_size=(640, 640))
@@ -37,3 +37,15 @@ async def face_pose(input_image: str):
         print(e)
 
 
+async def insightface_face_coordinate(input_image: str):
+    try:
+        # app = FaceAnalysis(allowed_modules=['detection']) # enable detection model only
+        # app.prepare(ctx_id=0, det_size=(640, 640))
+        # encoded_data = input_image.split(',')[1]
+        nparr = np.fromstring(base64.b64decode(input_image), np.uint8)
+        img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+        faces = app.get(img)
+        return faces
+    except Exception as e:
+        print("==error===")
+        print(e)
