@@ -24,7 +24,7 @@ if needs_install:
                 if '==' in package:
                     package_name, package_version = package.split('==')
                     if not launch.is_installed(package_name):
-                        launch.run_pip(f"install {package}", "requirements for face-detection-extension")
+                        launch.run_pip(f"install {package}", f"face-detection-extension requirement: {package}")
                     else:
                         installed_version = pkg_resources.get_distribution(package_name).version
                         if installed_version != package_version:

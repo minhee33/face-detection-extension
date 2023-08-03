@@ -20,7 +20,7 @@ async def insightface_face_num(app: FaceAnalysis, input_image: str):
         nparr = np.fromstring(base64.b64decode(input_image), np.uint8)
         img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
         faces = app.get(img)
-        print(f"{len(faces)}개")
+        print(f"insightface_face_num: {len(faces)}")
         return len(faces)
     except Exception as e:
         print("==error===")
