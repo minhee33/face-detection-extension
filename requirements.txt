@@ -1,0 +1,8 @@
+modules
+gradio
+fastapi
+pydantic
+os
+tqdm
+base64
+insightface
