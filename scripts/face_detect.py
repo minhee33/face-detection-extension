@@ -4,7 +4,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from pydantic.main import BaseModel
 import os
-from api import *
+from src.api import *
 
 
 

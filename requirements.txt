@@ -6,3 +6,4 @@ os
 tqdm
 base64
 insightface
+onnxruntime
