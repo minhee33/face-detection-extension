@@ -5,5 +5,5 @@ pydantic
 os
 tqdm
 base64
-insightface
+insightface==0.7.3
 onnxruntime
